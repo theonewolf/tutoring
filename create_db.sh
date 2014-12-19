@@ -43,7 +43,7 @@ VALUES ('%s', '%s');"
 printf "What is your MySQL Password? "
 read -s MYSQL_PASSWORD
 
- Create DB
+# Create DB
 printf 'Creating Database (%s)\n' "$CREATE_DB"
 mysql -u root --password="$MYSQL_PASSWORD" -e "$CREATE_DB"
 sleep 3
