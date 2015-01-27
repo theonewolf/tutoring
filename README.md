@@ -1,7 +1,7 @@
-### Learning Bash
+### Learning
 
-This is a collection of scripts designed to illustrate bash features and
-techniques.  They are meant as teaching examples.
+This is a collection of scripts, questions, and examples designed to
+act as teaching aids.
 
 ### License
 
