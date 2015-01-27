@@ -35,7 +35,7 @@ PL/SQL Warmup\\
 
 Design a table that can store user ID's, usernames, and passwords.  User ID's
 should be a unique numeric identifier.  No user should share the same user ID.
-Usernames should be unique strings identifying each user, assume that their
+Usernames should be unique strings identifying each user.  Assume that their
 maximum UTF-8 character length is 256 characters.  Assume also that passwords
 are UTF-8 strings with a maximum length of 256 characters.  However, unlike
 usernames, we should never store passwords in the clear.  Passwords are
@@ -64,8 +64,9 @@ queries as quickly as possible.  As a DBA, the key tool generally applied to
 speed up user queries is an index.  Generally, indexes create a summary with
 ``pointers" into a larger set of data.  For common user queries---those which
 are repeated frequently---creating an index can greatly decrease the latency
-users experience when running over very large tables.  But, there are different
-types of indexes which can be applied.
+users experience when running over very large tables.  But, there are many
+different types of indexes which can be created.  Knowing when to use which
+type is an important skill to develop.
 
 \subsection{What are the types of indexes supported by Oracle DB today (don't
 read further until you know the answer to this question)?}
