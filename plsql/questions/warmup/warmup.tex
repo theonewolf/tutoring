@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+
+\setmainfont[Mapping=tex-text]{Amiri}
+\setsansfont{Arial}
+\setmonofont[Mapping=tex-text]{Inconsolata}
+
+
+
+
+%%%% Includes %%%%
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+
+
+%%%% Setup %%%%
+\title{\rule{\linewidth}{0.5mm}\\
+\textbf{Assignment 1:}\\
+PL/SQL Warmup\\
+\rule{\linewidth}{1.0mm}}
+\author{Wolfgang Richter \textnormal{$\langle$}\href{mailto:wolfgang.richter@gmail.com}{wolfgang.richter@gmail.com}\textnormal{$\rangle$}}
+\titleformat
+    {\section}[hang]{\normalfont\Large\bfseries}{Problem \thesection. }{0pt}{}
+\titleformat
+    {\subsection}[hang]{\normalfont\bfseries}{Question \thesubsection. }{0pt}{}
+
+%%%% Main document %%%%
+\begin{document}
+
+\maketitle
+
+\section{Securely Storing Passwords}
+
+Design a table that can store user ID's, usernames, and passwords.  User ID's
+should be a unique numeric identifier.  No user should share the same user ID.
+Usernames should be unique strings identifying each user, assume that their
+maximum UTF-8 character length is 256 characters.  Assume also that passwords
+are UTF-8 strings with a maximum length of 256 characters.  However, unlike
+usernames, we should never store passwords in the clear.  Passwords are
+sensitive pieces of information.  If a hacker broke into the database, they
+would be able to steal people's passwords which are probably reused on other
+websites.  Design some way of storing passwords which is secure and does not
+store plaintext.
+
+\subsection{Why is it a good idea to use UTF-8 for string input from users?}
+
+\subsection{What are the options for securely storing passwords?}
+
+\subsection{How would you characterize the performance tradeoffs between these
+different options?  For example, could you design an experiment to benchmark
+different strategies in PL/SQL?}
+
+\subsection{Using the benchmark you designed, what is the empirical (implement
+and run your benchmark) cost of adding complexity over simply storing passwords
+in plaintext?}
+
+\newpage\section{Many Different Index Flavors}
+
+Tables in databases can easily grow to enormous size with hundreds of millions
+of rows.  This causes tension with the database's primary mission: serve user
+queries as quickly as possible.  As a DBA, the key tool generally applied to
+speed up user queries is an index.  Generally, indexes create a summary with
+``pointers" into a larger set of data.  For common user queries---those which
+are repeated frequently---creating an index can greatly decrease the latency
+users experience when running over very large tables.  But, there are different
+types of indexes which can be applied.
+
+\subsection{What are the types of indexes supported by Oracle DB today (don't
+read further until you know the answer to this question)?}
+
+\subsection{When would you use a B-tree style index?  When would you use a
+bitmap index?}
+
+\subsection{What is the difference between a local index and a global index?}
+
+\subsection{Describe a scenario where a function-based index would be a good
+choice.}
+
+\subsection{Over what kind of data would you use a domain index?}
+
+\subsection{When would you use a reverse key index?}
+
+\subsection{What is index block contention? What type of query throughput does
+it hurt?}
+
+\end{document}
